@@ -28,34 +28,48 @@ class CoreServicesSection extends StatelessWidget {
             runSpacing: 20,
             alignment: WrapAlignment.center,
             children: const [
-              ServiceCard(
-                icon: Icons.settings,
-                title: "IT STRATEGY",
-                description:
-                    "I help businesses leverage cutting-edge technology to achieve efficiency, security, and scalability.",
-              ),
-              ServiceCard(
-                icon: Icons.cloud,
-                title: "CLOUD SOLUTIONS",
-                description:
-                    "I help businesses leverage cutting-edge technology to achieve efficiency, security, and scalability.",
-              ),
-              ServiceCard(
-                icon: Icons.security,
-                title: "CYBERSECURITY",
-                description:
-                    "I help businesses leverage cutting-edge technology to achieve efficiency, security, and scalability.",
-              ),
-              ServiceCard(
-                icon: Icons.bar_chart,
-                title: "DATA ANALYTICS",
-                description:
-                    "I help businesses leverage cutting-edge technology to achieve efficiency, security, and scalability.",
-              ),
-            ],
+          
+  ServiceCard(
+    icon: Icons.settings,
+    title: "IT STRATEGY",
+    description:
+        "Helping startups and businesses define the right technology roadmap with scalable architecture, performance optimization, and secure system design.",
+  ),
+  ServiceCard(
+    icon: Icons.business_center,
+    title: "BUSINESS SOLUTIONS",
+    description:
+        "Providing customized digital solutions to streamline operations, improve productivity, and deliver seamless user experiences across platforms.",
+  ),
+  ServiceCard(
+    icon: Icons.phone_android,
+    title: "APP DEVELOPMENT",
+    description:
+        "Building high-performance cross-platform mobile applications using Flutter with modern UI/UX, real-time features, and smooth user interactions.",
+  ),
+  ServiceCard(
+    icon: Icons.web,
+    title: "WEB DEVELOPMENT",
+    description:
+        "Creating responsive and visually appealing web applications with fast performance, clean UI, and scalable backend integrations.",
+  ),
+  ServiceCard(
+    icon: Icons.code,
+    title: "BACKEND & APIs",
+    description:
+        "Developing secure and scalable backend systems using Django, REST APIs, and database management for robust application performance.",
+  ),
+  ServiceCard(
+    icon: Icons.work_outline,
+    title: "FREELANCING",
+    description:
+        "Offering freelance services for app and web development, UI design, bug fixing, and complete project delivery with client satisfaction.",
+  ),
+],
+      )],
           )
-        ],
-      ),
+      
+      
     );
   }
 }

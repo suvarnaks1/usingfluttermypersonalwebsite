@@ -57,7 +57,7 @@ class MobileView extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: const [
-          Navbar(isMobile: true),
+       //   Navbar(isMobile: true),
           HeroSection(isMobile: true),
            CoreServicesSection(isMobile: true),
            RecentProjectsSection(isMobile: true),
@@ -79,7 +79,7 @@ class TabletView extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: const [
-          Navbar(),
+        //  Navbar(),
           HeroSection(),
            CoreServicesSection(),
            RecentProjectsSection(),
@@ -100,7 +100,7 @@ class DesktopView extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          const Navbar(),
+      //    const Navbar(),
           const HeroSection(),
           CoreServicesSection(),
           RecentProjectsSection(),
