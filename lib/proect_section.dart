@@ -57,14 +57,14 @@ class RecentProjectsSection extends StatelessWidget {
                 description:
                     "A scalable and secure admin dashboard designed for complete system control, featuring real-time analytics, role-based access, and efficient data management tools.",
                 topImage: "assets/Neon tech flow and automation.png",
-                bottomImage: "assets/app4.png",
+                bottomImage: "assets/Futuristic_admin_dashboard_interface_display-removebg-preview.png",
               ),
               ProjectCard(
                 title: "PLANT APP",
                 description:
                     "A smart plant care application that helps users monitor plant health, set watering reminders, and explore a rich database of plant information for better growth and maintenance.",
                 topImage: "assets/Neon hand cradling growth and love.png",
-                bottomImage: "assets/app5.png",
+                bottomImage: "assets/Smartphones_showcasing_GreenCare_plant_app-removebg-preview.png",
               ),
             ],
           ),

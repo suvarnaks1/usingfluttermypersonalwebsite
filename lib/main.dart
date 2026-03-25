@@ -61,7 +61,8 @@ class MobileView extends StatelessWidget {
           HeroSection(isMobile: true),
            CoreServicesSection(isMobile: true),
            RecentProjectsSection(isMobile: true),
-           AboutSection(isMobile: true,)
+           AboutSection(isMobile: true,),
+           ContactSection(isMobile: true,)
            
         ],
       ),
@@ -82,7 +83,8 @@ class TabletView extends StatelessWidget {
           HeroSection(),
            CoreServicesSection(),
            RecentProjectsSection(),
-           AboutSection()
+           AboutSection(),
+           ContactSection()
         ],
       ),
     );
