@@ -146,24 +146,31 @@ class ContactSection extends StatelessWidget {
         _contactItem(Icons.phone, "PHONE:", "9747994362"),
         _contactItem(Icons.location_on, "LOCATION:", "India, Kerala"),
 
-        const SizedBox(height: 15),
+        const SizedBox(height: 20),
 
-     
-
+        // 🔥 SOCIAL ICONS WITH HOVER
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            _socialIcon(
-                FontAwesomeIcons.instagram, "https://www.instagram.com/suvarna_ks__"),
+            HoverSocialIcon(
+              icon: FontAwesomeIcons.instagram,
+              url: "https://www.instagram.com/suvarna_ks__",
+            ),
             const SizedBox(width: 15),
-            _socialIcon(
-                FontAwesomeIcons.linkedin, "https://www.linkedin.com/in/suvarna-k-s-b1897b276/"),
+            HoverSocialIcon(
+              icon: FontAwesomeIcons.linkedin,
+              url: "https://www.linkedin.com",
+            ),
             const SizedBox(width: 15),
-            _socialIcon(
-                FontAwesomeIcons.github, "https://github.com/suvarnaks1"),
-                  const SizedBox(width: 15),
-                 _socialIcon(
-                FontAwesomeIcons.facebook, "https://github.com/your_username"),
+            HoverSocialIcon(
+              icon: FontAwesomeIcons.github,
+              url: "https://github.com",
+            ),
+            const SizedBox(width: 15),
+            HoverSocialIcon(
+              icon: FontAwesomeIcons.facebook,
+              url: "https://facebook.com",
+            ),
           ],
         ),
       ],
@@ -220,31 +227,60 @@ class ContactSection extends StatelessWidget {
       ),
     );
   }
+}
 
-  // ---------------- SOCIAL ICON ----------------
-  static Widget _socialIcon(FaIconData icon, String url) {
-    return InkWell(
-      onTap: () => _openUrl(url),
-      borderRadius: BorderRadius.circular(50),
-      child: Container(
-        padding: const EdgeInsets.all(10),
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: const Color(0xFF1B263B),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.blueAccent.withOpacity(0.4),
-              blurRadius: 10,
-            ),
-          ],
-        ),
-        child: FaIcon(
-          icon,
-          color: Colors.blueAccent,
-          size: 20,
+// ---------------- HOVER ICON WIDGET ----------------
+class HoverSocialIcon extends StatefulWidget {
+  final FaIconData icon;
+  final String url;
+
+  const HoverSocialIcon({
+    super.key,
+    required this.icon,
+    required this.url,
+  });
+
+  @override
+  State<HoverSocialIcon> createState() => _HoverSocialIconState();
+}
+
+class _HoverSocialIconState extends State<HoverSocialIcon> {
+  bool isHover = false;
+
+  Future<void> _openUrl(String url) async {
+    final Uri uri = Uri.parse(url);
+    await launchUrl(uri, mode: LaunchMode.externalApplication);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      onEnter: (_) => setState(() => isHover = true),
+      onExit: (_) => setState(() => isHover = false),
+      child: GestureDetector(
+        onTap: () => _openUrl(widget.url),
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 300),
+          padding: const EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: isHover ? Colors.blueAccent : const Color(0xFF1B263B),
+            boxShadow: [
+              BoxShadow(
+                color: isHover
+                    ? Colors.blueAccent.withOpacity(0.8)
+                    : Colors.transparent,
+                blurRadius: 15,
+              ),
+            ],
+          ),
+          child: FaIcon(
+            widget.icon,
+            color: isHover ? Colors.white : Colors.blueAccent,
+            size: 20,
+          ),
         ),
       ),
     );
   }
 }
-

@@ -68,21 +68,7 @@ class RecentProjectsSection extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 20,),
-         Container(
-  width: double.infinity,
-  height: 1,
-  decoration: BoxDecoration(
-    color: Colors.blueAccent,
-    borderRadius: BorderRadius.circular(10),
-    boxShadow: [
-      BoxShadow(
-        color: Colors.blueAccent.withOpacity(0.6),
-        blurRadius: 8,
-      ),
-    ],
-  ),
-)
+     
         ],
       ),
     );
