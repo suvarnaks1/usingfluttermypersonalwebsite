@@ -50,7 +50,7 @@ class RecentProjectsSection extends StatelessWidget {
                 description:
                     "A unique agriculture-based application that connects users with jackfruit farming insights, recipes, and farm-to-table traceability, promoting sustainable and healthy living",
                 topImage: "assets/Glowing cacao fruits in neon blue.png",
-                bottomImage: "assets/app3.png",
+                bottomImage: "assets/Jackfruit recipe app on smartphones-Photoroom.png",
               ),
               ProjectCard(
                 title: "ADMIN PANEL",
