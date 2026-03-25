@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
+// ---------------- SECTION ----------------
 class RecentProjectsSection extends StatelessWidget {
-  const RecentProjectsSection({super.key});
+  final bool isMobile;
+  const RecentProjectsSection({super.key, this.isMobile = false});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 40),
-      decoration: const BoxDecoration(
-  color: Colors.black
-      ),
+      color: Colors.black,
       child: Column(
         children: [
           const Text(
@@ -32,52 +32,61 @@ class RecentProjectsSection extends StatelessWidget {
               ProjectCard(
                 title: "ASTROLOGER APP",
                 description:
-                    "Connect with celestial guidance. Integrated birth charts and compatibility reports.",
-                image: "assets/wheel.png",
-              
+                    "A modern astrology platform that connects users with experienced astrologers, offering real-time consultations, detailed birth chart analysis, and accurate horoscope predictions to guide life decisions.",
+                topImage: "assets/wheel.png",
+                bottomImage:
+                    "assets/Smartphones_with_celestial_wallpapers-removebg-preview.png",
               ),
               ProjectCard(
-                title: "EXPENSE TRACKER APP",
+                title: "EXPENSE TRACKER",
                 description:
-                    "Real-time tracking and comprehensive budget reports.",
-                image: "assets/Financial growth in neon glow.png",
+                    "A modern financial management app that empowers users to track expenses, set budgets, and visualize spending patterns through advanced analytics and user-friendly design.",
+                topImage: "assets/Financial growth in neon glow.png",
+                bottomImage:
+                    "assets/Financial_tracking_on_modern_smartphones-removebg-preview.png",
               ),
               ProjectCard(
                 title: "JACKFRUIT APP",
                 description:
-                    "Farm-to-table traceability and unique recipes.",
-                image: "assets/Glowing cacao fruits in neon blue.png",
+                    "A unique agriculture-based application that connects users with jackfruit farming insights, recipes, and farm-to-table traceability, promoting sustainable and healthy living",
+                topImage: "assets/Glowing cacao fruits in neon blue.png",
+                bottomImage: "assets/app3.png",
               ),
               ProjectCard(
                 title: "ADMIN PANEL",
                 description:
-                    "Service ticket management and diagnostics tools.",
-                image: "assets/Neon tech flow and automation.png",
+                    "A scalable and secure admin dashboard designed for complete system control, featuring real-time analytics, role-based access, and efficient data management tools.",
+                topImage: "assets/Neon tech flow and automation.png",
+                bottomImage: "assets/app4.png",
               ),
               ProjectCard(
                 title: "PLANT APP",
                 description:
-                    "Smart care reminders and plant database.",
-                image: "assets/Neon hand cradling growth and love.png",
+                    "A smart plant care application that helps users monitor plant health, set watering reminders, and explore a rich database of plant information for better growth and maintenance.",
+                topImage: "assets/Neon hand cradling growth and love.png",
+                bottomImage: "assets/app5.png",
               ),
             ],
-          )
+          ),
         ],
       ),
     );
   }
 }
 
+// ---------------- CARD ----------------
 class ProjectCard extends StatefulWidget {
   final String title;
   final String description;
-  final String image;
+  final String topImage;
+  final String bottomImage;
 
   const ProjectCard({
     super.key,
     required this.title,
     required this.description,
-    required this.image,
+    required this.topImage,
+    required this.bottomImage,
   });
 
   @override
@@ -94,12 +103,10 @@ class _ProjectCardState extends State<ProjectCard> {
       onExit: (_) => setState(() => isHover = false),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
-        width: MediaQuery.of(context).size.width < 600
-            ? double.infinity
-            : 250,
+        width: MediaQuery.of(context).size.width < 600 ? double.infinity : 260,
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
-          color: const Color(0xFF101522),
+          color: Color(0xFF0E111A),
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
             color: isHover
@@ -113,34 +120,45 @@ class _ProjectCardState extends State<ProjectCard> {
                   ? Colors.blue.withOpacity(0.4)
                   : Colors.blue.withOpacity(0.1),
               blurRadius: 15,
-              spreadRadius: 1,
-            )
+            ),
           ],
         ),
         child: Column(
           children: [
-            Image.asset(widget.image, height: 150),
-            const SizedBox(height: 15),
-               Image.asset(widget.image, height: 150),
-              const SizedBox(height: 15),
+            // 🔹 TOP ICON IMAGE
+            Image.asset(
+              widget.topImage,
+              height: 100,
+              fit: BoxFit.fill,
+              width: double.infinity,
+            ),
+
+            const SizedBox(height: 10),
+
+            // 🔹 BOTTOM APP IMAGE
+            Image.asset(
+              widget.bottomImage,
+              height: 200,
+              // width: double.infinity,
+              fit: BoxFit.fill,
+            ),
 
             Text(
               widget.title,
+              textAlign: TextAlign.center,
               style: const TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
                 fontSize: 14,
               ),
             ),
+
             const SizedBox(height: 10),
 
             Text(
               widget.description,
               textAlign: TextAlign.center,
-              style: const TextStyle(
-                color: Colors.white60,
-                fontSize: 12,
-              ),
+              style: const TextStyle(color: Colors.white60, fontSize: 12),
             ),
           ],
         ),

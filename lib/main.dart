@@ -57,7 +57,8 @@ class MobileView extends StatelessWidget {
         children: const [
           Navbar(isMobile: true),
           HeroSection(isMobile: true),
-           CoreServicesSection()
+           CoreServicesSection(isMobile: true),
+           RecentProjectsSection(isMobile: true)
         ],
       ),
     );
@@ -75,7 +76,8 @@ class TabletView extends StatelessWidget {
         children: const [
           Navbar(),
           HeroSection(),
-           CoreServicesSection()
+           CoreServicesSection(),
+           RecentProjectsSection()
         ],
       ),
     );
