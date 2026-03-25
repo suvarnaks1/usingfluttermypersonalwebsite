@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:webprofile/about_me.dart';
+import 'package:webprofile/contact_page.dart';
 import 'package:webprofile/hero_section.dart';
 import 'package:webprofile/nav_bar.dart';
 import 'package:webprofile/proect_section.dart';
@@ -58,7 +60,9 @@ class MobileView extends StatelessWidget {
           Navbar(isMobile: true),
           HeroSection(isMobile: true),
            CoreServicesSection(isMobile: true),
-           RecentProjectsSection(isMobile: true)
+           RecentProjectsSection(isMobile: true),
+           AboutSection(isMobile: true,)
+           
         ],
       ),
     );
@@ -77,7 +81,8 @@ class TabletView extends StatelessWidget {
           Navbar(),
           HeroSection(),
            CoreServicesSection(),
-           RecentProjectsSection()
+           RecentProjectsSection(),
+           AboutSection()
         ],
       ),
     );
@@ -96,7 +101,9 @@ class DesktopView extends StatelessWidget {
           const Navbar(),
           const HeroSection(),
           CoreServicesSection(),
-          RecentProjectsSection()
+          RecentProjectsSection(),
+          AboutSection(),
+         ContactSection()
         ],
       ),
     );
